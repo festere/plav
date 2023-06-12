@@ -1,0 +1,81 @@
+html{
+    background: url("/static/background-upload_success.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+  font-family: poppins, sans-serif;
+}
+
+table, td {
+    border: 1px solid #333;
+}
+
+thead, tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+h3 {
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+
+
+.custom-table {
+  border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+  border: none;
+}
+
+.custom-table th:not(:first-child),
+.custom-table td:not(:first-child) {
+  border-left: 1px solid black;
+}
+
+.custom-table th:not(:last-child),
+.custom-table td:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+.custom-table tr:not(:first-child) td {
+  border-top: 1px solid black;
+}
+
+.custom-table tr:not(:last-child) td {
+  border-bottom: 1px solid black;
+}
+
+
+/* ------------------------------
+Scrollbar
+------------------------------ */
+::-webkit-scrollbar {
+  width: 5px
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 10, 10, 0)
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3e4044;
+  border-radius: 10px
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa
+}
