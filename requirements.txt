@@ -1,0 +1,10 @@
+Django==4.1.6
+celery
+django-compressor
+django-libsass
+django-recaptcha
+django-staticfiles
+whitenoise
+colorama
+docker
+urllib3
