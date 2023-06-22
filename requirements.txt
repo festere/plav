@@ -10,4 +10,3 @@ docker
 urllib3
 apache2-vh
 mod_wsgi
-virtualenv
