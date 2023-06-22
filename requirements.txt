@@ -8,10 +8,6 @@ whitenoise
 colorama
 docker
 urllib3
-apache2
-apache2-utils
 apache2-vh
-libexpat1
-python3
-python3-dev
 mod_wsgi
+virtualenv
