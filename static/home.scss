@@ -252,8 +252,10 @@ Styling for the rest of the page
     display: inline-block;
     margin: 2rem auto 0; // Centering the upload element
     // place at the center of the page
-    position: absolute;
-    top: 40%;
-    left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 10%;
   }
 }
