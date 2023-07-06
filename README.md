@@ -30,22 +30,22 @@ apt-get update
 apt-get install software-properties-common -y
 ````
 ```bash
-apt install apache2
+apt install apache2 -y
 ````
 ```bash
-apt install apache2-dev
+apt install apache2-dev -y
 ````
 ```bash
-apt install git
+apt install git -y
 ````
 ```bash
 apt-get install rabbitmq-server -y
 ````
 ```bash
-apt install docker.io
+apt install docker.io -y
 ````
 ```bash
-apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev -y
 ````
 ```bash
 apt install -y python3-pip
