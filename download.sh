@@ -27,7 +27,16 @@ systemctl start docker
 # Create the virtual env for the plateforme:
 pip install virtualenv
 virtualenv venv
-source venv/bin/activate
+
+source_path="venv/bin/activate"
+if [ -f "$source_path" ]; then
+    # Execute the activation script directly
+    . "$source_path"
+    echo "Virtual environment activated."
+else
+    echo "Virtual environment not found."
+fi
+
 pip install -r requirements.txt
 
 # Install wsgi:
