@@ -39,13 +39,10 @@ sudo su
 if [ ! -d "/var/www" ]; then mkdir /var/www; fi
 ````
 ```bash
-cd /var/www
-````
-```bash
 apt install git -y
 ````
 ```bash
-git clone https://github.com/festere/plav.git
+git clone https://github.com/festere/plav.git /var/www
 ````
 ```bash
 cd plav/
