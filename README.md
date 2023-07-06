@@ -42,7 +42,7 @@ if [ ! -d "/var/www" ]; then mkdir /var/www; fi
 apt install git -y
 ````
 ```bash
-git clone https://github.com/festere/plav.git /var/www
+git clone https://github.com/festere/plav.git /var/www/plav
 ````
 ```bash
 cd /var/www/plav/
