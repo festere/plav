@@ -51,7 +51,7 @@ apt install docker.io -y
 apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev -y
 ````
 ```bash
-apt install -y python3-pip
+apt install python3-pip -y
 ````
 ```bash
 apt-get install libapache2-mod-wsgi-py3
