@@ -6,7 +6,6 @@ apt-get update
 apt-get install software-properties-common -y
 apt install apache2 -y
 apt install apache2-dev -y
-apt install git -y
 apt-get install rabbitmq-server -y
 apt install docker.io -y
 apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev -y
@@ -26,7 +25,6 @@ rm -rf /var/snap/docker/179/run/docker.pid
 systemctl start docker
 
 # Create the virtual env for the plateforme:
-cd plav/
 pip install virtualenv
 virtualenv venv
 source venv/bin/activate
