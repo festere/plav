@@ -44,6 +44,9 @@ apt install git -y
 ```bash
 git clone https://github.com/festere/plav.git /var/www/plav
 ````
+
+### Download the depencies and apps:
+### Download the platform:
 ```bash
 cd /var/www/plav/
 ````
@@ -52,4 +55,17 @@ chmod +x download.sh
 ````
 ```bash
 ./download.sh
+````
+
+### Join the virtual environment:
+```bash
+source venv/bin/activate
+````
+
+### Start the platform:
+```bash
+python3 manage.py runserver
+````
+```bash
+celery -A PlateformeAntivirale worker -l info
 ````
