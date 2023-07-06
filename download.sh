@@ -25,9 +25,7 @@ service rabbitmq-server start
 rm -rf /var/snap/docker/179/run/docker.pid
 systemctl start docker
 
-# Download the plateforme:
-cd /var/www/
-git clone https://github.com/festere/plav.git
+# Create the virtual env for the plateforme:
 cd plav/
 pip install virtualenv
 virtualenv venv
