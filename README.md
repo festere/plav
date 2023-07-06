@@ -1,18 +1,36 @@
-# Table des matières
-1. [Utilisation](#Utilisation)
-2. [Création de l'image](#Créationdel'image)
+![](https://img.shields.io/badge/AV-red?style=for-the-badge)
+![](https://img.shields.io/badge/linux-green?style=for-the-badge)
+![](https://img.shields.io/badge/unix-gray?style=for-the-badge)
+
+<br>
+
+# Table of contents
+1. [Disclaimer](#Disclaimer)
+2. [Description](#Description)
+3. [Installation](#Installation)
+   
+<br>
+<br>
+<br>
+<br>
+
+# <a name="Disclaimer">Disclaimer:</a>
+<span style="color:red">Before using any of our application(s) and/or sevice(s), please ensure that you have read and understood our license, terms of use (in the license), and copyright policy (in the license). By using our application(s) and/or sevice(s), you agree to comply with all applicable laws and regulations, and to be bound by our license, terms of use, and copyright policy. If you do not agree with any part of these documents, you must not use our app or services. Please note that our license, terms of use, and copyright policy are subject to change without notice, and it is your responsibility to periodically review these documents for any updates or changes.</span>
+   
+<br>
+<br>
+<br>
+<br>
+
+# <a name="Description">Description:<a>
+Django web server with apache to analyze files thanks to multiple AV in static.
 
 <br>
 <br>
 <br>
-
-
-## <a name="Utilisation">Utilisation:<a>
-Server web django permettant le téléchargement de fichier ou dossier pour une analyse totalement locale par plusieurs antivirus de façons statiques.
-
 <br>
-<br>
-<br>
+
+# <a name="Installation">Installation:<a>
 
 ```bash
 sudo su
@@ -37,127 +55,4 @@ chmod +x download.sh
 ````
 ```bash
 ./download.sh
-````
-
-## <a name="Créationdel'image">Création de l'image:<a>
-### Mise à jour du systeme
-```bash
-apt update && upgrade -y
-````
-```bash
-apt-get update
-````
-
-<br>
-
-### Installation des applications:
-```bash
-apt-get install software-properties-common -y
-````
-```bash
-apt install apache2 -y
-````
-```bash
-apt install apache2-dev -y
-````
-```bash
-apt-get install rabbitmq-server -y
-````
-```bash
-apt install docker.io -y
-````
-```bash
-apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev -y
-````
-```bash
-apt install python3-pip -y
-````
-```bash
-apt-get install libapache2-mod-wsgi-py3
-````
-
-<br>
-
-### Modification de Apache2:
-```bash
-cd etc/apache2/sites-available
-````
-```bash
-nano 000-default.conf
-````
-remove everything and replace it with what's inside: "000-default.conf"
-
-<br>
-
-### Lancement des applications:
-```bash
-systemctl enable rabbitmq-server
-````
-```bash
-service rabbitmq-server start
-````
-```bash
-service rabbitmq-server status
-````
-```bash
-dockerd
-````
-Si un problème survient lors du lancement de docker:
-```bash
-rm -rf /var/snap/docker/179/run/docker.pid
-````
-```bash
-systemctl start docker
-````
-```bash
-systemctl status docker
-````
-
-<br>
-
-### Installation de la plateforme:
-```bash
-cd var/www/
-````
-```bash
-git clone https://github.com/festere/plav.git
-````
-
-<br>
-
-### Création et lancement de l'environnement virtuel:
-```bash
-cd plav
-````
-```bash
-pip install virtualenv
-````
-```bash
-virtualenv venv
-````
-```bash
-source venv/bin/activate
-````
-```bash
-pip install -r requirements.txt
-````
-
-<br>
-
-### Installation de wsgi:
-```bash
-a2enmod wsgi
-````
-
-<br>
-
-### Lancement de la plateforme:
-```bash
-systemctl restart apache2
-````
-```bash
-celery -A PlateformeAntivirale worker -l info
-````
-```bash
-python3 manage.py runserver
 ````
