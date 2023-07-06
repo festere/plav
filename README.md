@@ -36,9 +36,6 @@ Django web server with apache to analyze files thanks to multiple AV in static.
 sudo su
 ````
 ```bash
-if [ ! -d "/var/www" ]; then mkdir /var/www; fi
-````
-```bash
 apt install git -y
 ````
 ```bash
