@@ -12,7 +12,7 @@ apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev l
 apt install python3-pip -y
 apt-get install libapache2-mod-wsgi-py3 -y
 
-# Modify Apach2
+# Modify Apach2:
 source_file="000-default.conf"
 destination_folder="/etc/apache2/sites-available"
 cp "$source_file" "$destination_folder/000-default.conf"
