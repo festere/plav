@@ -21,7 +21,7 @@ sudo su
 if [ ! -d "/var/www" ]; then mkdir /var/www; fi
 ````
 ```bash
-/var/www
+cd /var/www
 ````
 ```bash
 apt install git -y
