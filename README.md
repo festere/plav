@@ -14,6 +14,16 @@ Server web django permettant le téléchargement de fichier ou dossier pour une 
 <br>
 <br>
 
+```bash
+sudo su
+````
+```bash
+chmod +x download.sh
+````
+```bash
+./download.sh
+````
+
 ## <a name="Créationdel'image">Création de l'image:<a>
 ### Mise à jour du systeme
 ```bash
