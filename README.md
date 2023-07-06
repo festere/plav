@@ -30,7 +30,7 @@ apt install git -y
 git clone https://github.com/festere/plav.git
 ````
 ```bash
-cd palv/
+cd plav/
 ````
 ```bash
 chmod +x download.sh
