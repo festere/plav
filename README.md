@@ -45,7 +45,7 @@ apt install git -y
 git clone https://github.com/festere/plav.git /var/www
 ````
 ```bash
-cd plav/
+cd /var/www/plav/
 ````
 ```bash
 chmod +x download.sh
