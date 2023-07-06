@@ -87,6 +87,9 @@ rm -rf /var/snap/docker/179/run/docker.pid
 ```bash
 systemctl start docker
 ````
+```bash
+systemctl status docker
+````
 
 <br>
 
@@ -102,6 +105,9 @@ git clone https://github.com/festere/plav.git
 
 ### Création et lancement de l'environnement virtuel:
 ```bash
+cd plav
+````
+```bash
 pip install virtualenv
 ````
 ```bash
@@ -112,9 +118,6 @@ source venv/bin/activate
 ````
 ```bash
 pip install -r requirements.txt
-````
-```bash
-pip install django
 ````
 
 <br>
