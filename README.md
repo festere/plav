@@ -17,6 +17,9 @@ Server web django permettant le téléchargement de fichier ou dossier pour une 
 ## <a name="Créationdel'image">Création de l'image:<a>
 ### Mise à jour du systeme
 ```bash
+sudo su
+````
+```bash
 apt update && upgrade -y
 ````
 ```bash
