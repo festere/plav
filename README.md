@@ -1,7 +1,6 @@
 # Table des matières
 1. [Utilisation](#Utilisation)
 2. [Création de l'image](#Créationdel'image)
-3. [Installation de l'image](#Installationdel'image)
 
 <br>
 <br>
@@ -16,131 +15,124 @@ Server web django permettant le téléchargement de fichier ou dossier pour une 
 <br>
 
 ## <a name="Créationdel'image">Création de l'image:<a>
-### Création du docker:
-```bash 
-apt install docker.io
-```
-```bash 
-sudo dockerd
-```
-```bash 
-docker pull debian
-```
+### Mise à jour du systeme
 ```bash
-docker run -t -p 8000:8000 --privileged --name plateforme-antiviral debian
-```
-```bash 
-docker exec -it Plateforme-Antiviral /bin/bash
-```
+apt update && upgrade -y
+````
+```bash
+apt-get update
+````
 
 <br>
-<br>
 
-### Installation de git:
-```bash 
+### Installation des applications:
+```bash
+apt-get install software-properties-common -y
+````
+```bash
+apt install apache2
+````
+```bash
+apt install apache2-dev
+````
+```bash
 apt install git
-```
-```bash 
-git clone https://github.com/festere/Plateforme-Antivirale.git
-```
-
-<br>
-<br>
-
-### Installation et lancement de Rabbit-mq
-```bash 
+````
+```bash
 apt-get install rabbitmq-server -y
-```
+````
+```bash
+apt install docker.io
+````
+```bash
+apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+````
+```bash
+apt install -y python3-pip
+````
+```bash
+apt-get install libapache2-mod-wsgi-py3
+````
 
 <br>
 
-```bash 
+### Modification de Apache2:
+```bash
+cd etc/apache2/sites-available
+````
+```bash
+nano 000-default.conf
+````
+remove everything and replace it with what's inside: "000-default.conf"
+
+<br>
+
+### Lancement des applications:
+```bash
 systemctl enable rabbitmq-server
-```
-```bash 
-systemctl start rabbitmq-server
-``` 
-```bash 
-systemctl status rabbitmq-server
-``` 
-OR
-```bash 
+````
+```bash
 service rabbitmq-server start
-``` 
-```bash 
+````
+```bash
 service rabbitmq-server status
-```
-
-<br>
-<br>
-
-### Installation et lancement de Docker:
+````
 ```bash
-apt install docker.io
-```
-
-<br>
-
-```bash 
+dockerd
+````
+Si un problème survient lors du lancement de docker:
+```bash
+rm -rf /var/snap/docker/179/run/docker.pid
+````
+```bash
 systemctl start docker
-``` 
-```bash
-systemctl status docker
-```
-OR
-```bash 
-sudo dockerd
-```
+````
 
 <br>
+
+### Installation de la plateforme:
+```bash
+cd var/www/
+````
+```bash
+git clone https://github.com/festere/plav.git
+````
+
 <br>
 
-### Installation de pip et des librairies python:
-```bash 
-apt install pip -y
-```
+### Création et lancement de l'environnement virtuel:
 ```bash
-cd Plateforme-Antiviral
-```
-``` bash
+pip install virtualenv
+````
+```bash
+virtualenv venv
+````
+```bash
+source venv/bin/activate
+````
+```bash
 pip install -r requirements.txt
-```
+````
+```bash
+pip install django
+````
 
 <br>
-<br>
-<br>
 
-## <a name="Installationdel'image">Installation de l'image:<a>
-### Création du docker:
-```bash 
-apt install docker.io
-```
-```bash 
-sudo dockerd
-```
-```bash 
-docker pull festere/plateforme-antiviral
-``` 
-```bash 
-docker run -t -p 8000:8000 --privileged --name plateforme-antiviral festere/plateforme-antiviral
-``` 
-```bash 
-docker exec -it plateforme-antiviral /bin/bash
-```
+### Installation de wsgi:
+```bash
+a2enmod wsgi
+````
 
 <br>
-<br>
 
-### Pour démarer le server il faut:
-```bash 
-sudo dockerd
-```
-```bash 
-cd Plateforme-Antiviral
-```
-```bash 
+### Lancement de la plateforme:
+```bash
+systemctl restart apache2
+````
+```bash
 celery -A PlateformeAntivirale worker -l info
-```
-```bash 
+````
+```bash
 python3 manage.py runserver
-```
+````
