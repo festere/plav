@@ -1,6 +1,8 @@
 body {
   font-family: poppins, sans-serif;
   color: #ccc;
+  height: 100vh;
+  width: 100vw;
 }
 
 h1, h2, h3, h4, h5, h6, p, a{
@@ -249,5 +251,9 @@ Styling for the rest of the page
   .upload-wrapper {
     display: inline-block;
     margin: 2rem auto 0; // Centering the upload element
+    // place at the center of the page
+    position: absolute;
+    top: 40%;
+    left: 40%;
   }
 }
