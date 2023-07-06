@@ -18,6 +18,21 @@ Server web django permettant le téléchargement de fichier ou dossier pour une 
 sudo su
 ````
 ```bash
+if [ ! -d "/var/www" ]; then mkdir /var/www; fi
+````
+```bash
+/var/www
+````
+```bash
+apt install git -y
+````
+```bash
+git clone https://github.com/festere/plav.git
+````
+```bash
+cd palv/
+````
+```bash
 chmod +x download.sh
 ````
 ```bash
@@ -26,9 +41,6 @@ chmod +x download.sh
 
 ## <a name="Créationdel'image">Création de l'image:<a>
 ### Mise à jour du systeme
-```bash
-sudo su
-````
 ```bash
 apt update && upgrade -y
 ````
@@ -47,9 +59,6 @@ apt install apache2 -y
 ````
 ```bash
 apt install apache2-dev -y
-````
-```bash
-apt install git -y
 ````
 ```bash
 apt-get install rabbitmq-server -y
