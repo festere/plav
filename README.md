@@ -31,7 +31,7 @@ Django web server with apache to analyze files thanks to multiple AV in static.
 <br>
 
 # <a name="Installation">Installation:<a>
-
+### Download the platform:
 ```bash
 sudo su
 ````
@@ -45,8 +45,9 @@ apt install git -y
 git clone https://github.com/festere/plav.git /var/www/plav
 ````
 
+<br>
+
 ### Download the depencies and apps:
-### Download the platform:
 ```bash
 cd /var/www/plav/
 ````
@@ -57,10 +58,14 @@ chmod +x download.sh
 ./download.sh
 ````
 
+<br>
+
 ### Join the virtual environment:
 ```bash
 source venv/bin/activate
 ````
+
+<br>
 
 ### Start the platform:
 ```bash
