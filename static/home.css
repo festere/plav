@@ -250,4 +250,5 @@ body {
 .wrapper .upload-wrapper {
   display: inline-block;
   margin: 2rem auto 0;
+  padding-top: 10%;
 }
