@@ -66,6 +66,9 @@ source venv/bin/activate
 
 ### Start the platform:
 ```bash
+systemctl restart apache2
+````
+```bash
 python3 manage.py runserver
 ````
 ```bash
