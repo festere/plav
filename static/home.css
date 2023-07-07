@@ -236,7 +236,6 @@ Upload button styling
 Styling for the rest of the page
 ------------------------------ */
 body {
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
