@@ -49,7 +49,7 @@ git clone https://github.com/festere/plav.git /var/www/plav
 cd /var/www/
 ````
 ```bash
-chown nobody /plav && chmod 777 /plav
+chown nobody plav && chmod 777 plav
 ````
 ```bash
 cd /plav/
