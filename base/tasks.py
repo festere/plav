@@ -248,5 +248,5 @@ def upload_file(request):
 
     else:
         # Render the file upload form
-        print(Fore.RED + "Unseccessful analysis at" + Fore.RESET)
+        print(Fore.RED + "The upload of the file encountered an error" + Fore.RESET)
         return render(request, 'home.html')
