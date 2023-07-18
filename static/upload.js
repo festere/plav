@@ -36,7 +36,7 @@ function uploadFile(file) {
             
             setTimeout(() => {
                 upload.classList.remove("uploading");
-            }, 5000);
+            }, 500000);
         });
     }
 }
