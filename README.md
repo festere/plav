@@ -46,7 +46,13 @@ git clone https://github.com/festere/plav.git /var/www/plav
 
 ### Download the depencies and apps:
 ```bash
-cd /var/www/plav/
+cd /var/www/
+````
+```bash
+chown test /plav && chmod 777 /plav
+````
+```bash
+cd /plav/
 ````
 ```bash
 chmod +x download.sh
