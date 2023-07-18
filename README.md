@@ -52,7 +52,7 @@ cd /var/www/
 chown nobody plav && chmod 777 plav
 ````
 ```bash
-cd /plav/
+cd plav/
 ````
 ```bash
 chmod +x download.sh
