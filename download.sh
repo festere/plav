@@ -37,7 +37,7 @@ else
     echo "Virtual environment not found."
 fi
 
-pip install --upgrade pip -y
+pip install --upgrade pip
 pip install -r requirements.txt
 
 # Install wsgi:
