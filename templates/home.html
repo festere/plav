@@ -32,7 +32,6 @@
 
     <!-- Upload  -->
     <div class="wrapper">
-        {% csrf_token %}
         <div class="upload-wrapper">
           <div class="upload drop-area">
             <div class="upload-info">
@@ -54,8 +53,9 @@
               <span class="upload-filename inactive drop-text">No file selected</span>
             </div>
             <button class="upload-button">
-              <input type="file" id="file" onchange="uploadFile()"/>
-              <label for="file" class="upload-button-text">Choose file</label>
+                {% csrf_token %}
+                <input type="file" id="file" onchange="uploadFile()"/>
+                <label for="file" class="upload-button-text">Choose file</label>
             </button>
             <div class="upload-hint">Uploading...</div>
             <div class="upload-progress"></div>
