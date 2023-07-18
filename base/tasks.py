@@ -180,7 +180,7 @@ def start_rkhunter_container(file_path):
 def upload_file(request):
     # Get the context from the request
     if request.method == 'POST':
-        uploaded_file = request.FILES['fileToUpload']
+        uploaded_file = request.FILES['file']
         uploaded_file_original = uploaded_file.name
         print(Fore.GREEN + "File uploaded: " + Fore.RESET + uploaded_file.name)
 
