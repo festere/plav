@@ -42,3 +42,7 @@ pip install -r requirements.txt
 
 # Install wsgi:
 a2enmod wsgi
+
+# Enable Apache mods
+sudo a2enmod proxy
+a2enmod proxy_http
