@@ -72,6 +72,9 @@ source venv/bin/activate
 
 ### Start the platform:
 ```bash
+sudo a2enmod proxy
+````
+```bash
 systemctl restart apache2
 ````
 ```bash
