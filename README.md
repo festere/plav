@@ -75,6 +75,9 @@ source venv/bin/activate
 sudo a2enmod proxy
 ````
 ```bash
+a2enmod proxy_http
+````
+```bash
 systemctl restart apache2
 ````
 ```bash
