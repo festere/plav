@@ -70,18 +70,26 @@ source venv/bin/activate
 
 <br>
 
-### Start the platform:
-```bash
-sudo a2enmod proxy
-````
-```bash
-a2enmod proxy_http
-````
+### Start the platform (1/2):
 ```bash
 systemctl restart apache2
 ````
 ```bash
 python3 manage.py runserver
+````
+
+<br>
+
+### Start the platform (2/2):
+⚠ In a second terminal ⚠
+```bash
+sudo su
+````
+```bash
+cd /plav/www/plav
+````
+```bash
+source venv/bin/activate
 ````
 ```bash
 celery -A PlateformeAntivirale worker -l info
