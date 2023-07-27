@@ -92,5 +92,5 @@ cd /plav/www/plav
 source venv/bin/activate
 ````
 ```bash
-celery -A PlateformeAntivirale worker -l info
+celery -A PlateformeAntivirale worker -l info -c 3
 ````
