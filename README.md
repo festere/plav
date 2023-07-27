@@ -87,7 +87,7 @@ sudo su
 ````
 ```bash
 cd /plav/www/plav
-````
+```
 ```bash
 source venv/bin/activate
 ````
