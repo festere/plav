@@ -13,9 +13,15 @@ apt install python3-pip -y
 apt-get install libapache2-mod-wsgi-py3 -y
 
 # Modify Apach2:
-source_file="000-default.conf"
-destination_folder="/etc/apache2/sites-available"
-cp "$source_file" "$destination_folder/000-default.conf"
+## 000-default.conf
+source_file_000_default="000-default.conf"
+destination_folder_000_default="/etc/apache2/sites-available"
+cp "$source_file_000_default" "$destination_folder_000_default/000-default.conf"
+
+## apache2.conf
+source_file_apache2="apache2.conf"
+destination_folder_apache2="/etc/apache2"
+cp "$source_file_apache2" "$destination_folder_apache2/apache2.conf"
 systemctl restart apache2
 
 # Start the apps:
