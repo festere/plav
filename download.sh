@@ -24,7 +24,7 @@ if [ -f "$conf_file" ]; then
     read -p "Enter the new ServerName: " new_server_name
 
     # Modify the .conf file while keeping the same line number
-    sed -i "/ServerName/c\ServerName $new_server_name" "$conf_file"
+    sed -i "0,/^ServerName/ s/^ServerName.*/ServerName $new_server_name/" "$conf_file"
 
     echo "Modification complete!"
 else
