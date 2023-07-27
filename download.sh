@@ -13,37 +13,12 @@ apt install python3-pip -y
 apt-get install libapache2-mod-wsgi-py3 -y
 
 # Modify Apach2:
-## Update 000-default.conf
-### For the ServerName
-# Modify the 000-default.conf file
-read -p "Enter the server name: " server_name
-
-# Modify the 000-default.conf file
-file_path="/var/www/plav/000-default.conf"
-
-# Check if the file exists
-if [ -f "$file_path" ]; then
-    # Use grep to check if "ServerName" line exists in the file
-    if grep -q "^ServerName" "$file_path"; then
-        # If the line exists, replace it with the new server name
-        sed -i "s/^ServerName.*/ServerName $server_name/" "$file_path"
-    else
-        # If the line doesn't exist, add it at the end of the file
-        echo "ServerName $server_name" >> "$file_path"
-    fi
-
-    echo "ServerName $server_name has been added/modified in $file_path."
-else
-    echo "Error: File $file_path not found."
-fi
-### For the ServerAlias
-
-## change 000-default.conf
+## 000-default.conf
 source_file_000_default="000-default.conf"
 destination_folder_000_default="/etc/apache2/sites-available"
 cp "$source_file_000_default" "$destination_folder_000_default/000-default.conf"
 
-## change apache2.conf
+## apache2.conf
 source_file_apache2="apache2.conf"
 destination_folder_apache2="/etc/apache2"
 cp "$source_file_apache2" "$destination_folder_apache2/apache2.conf"
@@ -76,4 +51,4 @@ a2enmod wsgi
 
 # Enable Apache mods
 sudo a2enmod proxy
-a2enmod proxy_http
+a2enmod proxy_httpss
