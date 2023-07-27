@@ -15,6 +15,7 @@ apt-get install libapache2-mod-wsgi-py3 -y
 # Modify Apach2:
 ## Update 000-default.conf
 ### For the ServerName
+# Modify the 000-default.conf file
 read -p "Enter the server name: " server_name
 
 # Modify the 000-default.conf file
@@ -22,9 +23,16 @@ file_path="/var/www/plav/000-default.conf"
 
 # Check if the file exists
 if [ -f "$file_path" ]; then
-    # Use sed to find the line starting with "ServerName" and append the server name after it
-    sed -i "/^ServerName/ s/$/ $server_name/" "$file_path"
-    echo "ServerName $server_name has been added to $file_path."
+    # Use grep to check if "ServerName" line exists in the file
+    if grep -q "^ServerName" "$file_path"; then
+        # If the line exists, replace it with the new server name
+        sed -i "s/^ServerName.*/ServerName $server_name/" "$file_path"
+    else
+        # If the line doesn't exist, add it at the end of the file
+        echo "ServerName $server_name" >> "$file_path"
+    fi
+
+    echo "ServerName $server_name has been added/modified in $file_path."
 else
     echo "Error: File $file_path not found."
 fi
