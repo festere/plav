@@ -34,49 +34,49 @@ Django web server with apache to analyze files thanks to multiple AV in static.
 ### Download the platform:
 ```bash
 sudo su
-````
+```
 ```bash
 apt install git -y
-````
+```
 ```bash
 git clone https://github.com/festere/plav.git /var/www/plav
-````
+```
 
 <br>
 
 ### Download the depencies and apps:
 ```bash
 cd /var/www/
-````
+```
 ```bash
 chown nobody plav && chmod 777 plav
-````
+```
 ```bash
 cd plav/
-````
+```
 ```bash
 chmod +x download.sh
-````
+```
 ```bash
 ./download.sh
-````
+```
 
 <br>
 
 ### Join the virtual environment:
 ```bash
 source venv/bin/activate
-````
+```
 
 <br>
 
 ### Start the platform (1/2):
 ```bash
 systemctl restart apache2
-````
+```
 ```bash
 python3 manage.py runserver
-````
+```
 
 <br>
 
@@ -84,13 +84,13 @@ python3 manage.py runserver
 ⚠ In a second terminal ⚠
 ```bash
 sudo su
-````
+```
 ```bash
 cd /plav/www/plav
 ```
 ```bash
 source venv/bin/activate
-````
+```
 ```bash
 celery -A PlateformeAntivirale worker -l info -c 3
-````
+```
