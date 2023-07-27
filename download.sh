@@ -13,12 +13,32 @@ apt install python3-pip -y
 apt-get install libapache2-mod-wsgi-py3 -y
 
 # Modify Apach2:
-## 000-default.conf
+## change 000-default.conf
 source_file_000_default="000-default.conf"
 destination_folder_000_default="/etc/apache2/sites-available"
 cp "$source_file_000_default" "$destination_folder_000_default/000-default.conf"
 
-## apache2.conf
+## Update 000-default.conf
+### For the ServerName
+file_name=source_file_000_default
+read -p "Enter the ServerName name: " ServerName
+if [ -f "$file_name" ]; then
+    sed -i "s/ServerName =.*/$ServerName" "$file_name"
+    echo "Modification complete!"
+else
+    echo "File not found. Please enter a valid file name."
+fi
+### For the ServerAlias
+file_name=source_file_000_default
+read -p "Enter the ServerName name: " ServerAlias
+if [ -f "$file_name" ]; then
+    sed -i "s/ServerAlias =.*/$ServerAlias" "$file_name"
+    echo "Modification complete!"
+else
+    echo "File not found. Please enter a valid file name."
+fi
+
+## change apache2.conf
 source_file_apache2="apache2.conf"
 destination_folder_apache2="/etc/apache2"
 cp "$source_file_apache2" "$destination_folder_apache2/apache2.conf"
